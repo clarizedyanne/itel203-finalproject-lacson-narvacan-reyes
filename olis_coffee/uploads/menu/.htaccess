@@ -1,0 +1,5 @@
+# Only allow image files to be served from this directory
+<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|webp)$)">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
