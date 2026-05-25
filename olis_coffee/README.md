@@ -76,15 +76,15 @@ olis_coffee/
 - Total seeded items: 100+
 
 ## Features Demonstrated
-- ✅ OOP PHP (classes: Database, Auth, MenuItem)
-- ✅ Session-based login/logout
-- ✅ Password hashing (password_hash / password_verify)
-- ✅ MySQL relational database (4+ tables)
-- ✅ Foreign Keys & One-to-Many relationships
-- ✅ CRUD operations with image upload
-- ✅ JOIN queries (4-table JOIN in reports)
-- ✅ Bootstrap 5 UI
-- ✅ Custom CSS + animations
-- ✅ JavaScript (tab filtering, dynamic dropdowns, image preview)
-- ✅ AI Chatbot (Claude API)
-- ✅ GCash reservation fee
+- OOP PHP (classes: Database, Auth, MenuItem)
+- Session-based login/logout
+- Password hashing (password_hash / password_verify)
+- MySQL relational database (4+ tables)
+- Foreign Keys & One-to-Many relationships
+- CRUD operations with image upload
+- JOIN queries (4-table JOIN in reports)
+- Bootstrap 5 UI
+- Custom CSS + animations
+- JavaScript (tab filtering, dynamic dropdowns, image preview)
+- AI Chatbot (Claude API)
+- GCash reservation fee
