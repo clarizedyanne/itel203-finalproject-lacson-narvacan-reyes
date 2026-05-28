@@ -1,0 +1,530 @@
+/* css/style.css - Oli's SelfieTea & Coffee */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --green-dark:   #2d4a1e;
+  --green-mid:    #4a7c35;
+  --green-light:  #8ab87a;
+  --cream:        #f5f0e8;
+  --warm-white:   #fdfaf5;
+  --gold:         #c9a84c;
+  --brown:        #6b4c2a;
+  --text-dark:    #1a1a1a;
+  --text-muted:   #6b7280;
+  --shadow:       0 4px 20px rgba(0,0,0,0.1);
+  --radius:       12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--warm-white);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--green-dark) !important;
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--cream) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand .brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.navbar-brand span.sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  color: var(--green-light);
+  display: block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--cream) !important;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255,255,255,0.12) !important;
+  color: var(--gold) !important;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--cream) !important;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.btn-logout:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--gold);
+  color: var(--gold) !important;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, #1a3510 60%, var(--brown) 100%);
+  color: var(--cream);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg_new.png') center center / cover no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hero-title span {
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(245,240,232,0.75);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  color: rgba(245,240,232,0.8);
+  font-size: 1.05rem;
+  max-width: 500px;
+}
+
+/* ── SECTION TITLES ── */
+.section-tag {
+  display: inline-block;
+  background: var(--green-mid);
+  color: white;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.section-divider {
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 10px 0 30px;
+}
+
+/* ── SUBCATEGORY TABS ── */
+.cat-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.cat-tab {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 2px solid var(--green-mid);
+  background: transparent;
+  color: var(--green-mid);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Lato', sans-serif;
+}
+
+.cat-tab:hover, .cat-tab.active {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: white;
+}
+
+/* ── MENU CARDS ── */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.menu-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+}
+
+.menu-card-img {
+  height: 160px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.menu-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.menu-card:hover .menu-card-img img {
+  transform: scale(1.05);
+}
+
+.menu-card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  color: var(--green-light);
+  gap: 6px;
+}
+
+.menu-card-img-placeholder i {
+  font-size: 2rem;
+}
+
+.menu-card-img-placeholder span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.menu-card-body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.menu-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.menu-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.menu-card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.menu-card-price small {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.badge-sharing {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--gold);
+  color: white;
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ── LOGIN PAGE ── */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--green-dark) 0%, #1a3510 50%, var(--brown) 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(45,74,30,0.25));
+}
+
+.login-logo h2 {
+  font-size: 1.4rem;
+}
+
+.login-logo p {
+  font-size: 0.85rem;
+}
+
+.form-label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(74,124,53,0.15);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  color: white;
+}
+
+.demo-creds {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--green-dark);
+}
+
+/* ── ADMIN DASHBOARD ── */
+.admin-sidebar {
+  min-height: calc(100vh - 60px);
+  background: var(--green-dark);
+  color: white;
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.admin-sidebar .nav-link {
+  color: rgba(255,255,255,0.75) !important;
+  border-radius: 8px;
+  margin: 2px 8px;
+  font-size: 0.9rem;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+  background: rgba(255,255,255,0.12) !important;
+  color: white !important;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--green-mid);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.stat-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ── TABLE ── */
+.table-olis thead {
+  background: var(--green-dark);
+  color: white;
+}
+
+.table-olis thead th {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border: none;
+}
+
+.table-olis tbody td {
+  padding: 10px 16px;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.table-olis tbody tr:hover {
+  background: #f0fdf4;
+}
+
+.badge-available {
+  background: #dcfce7;
+  color: #166534;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-unavailable {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ── ALERT ── */
+.alert-olis {
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--green-dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  margin-top: 4rem;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease both;
+}
+
+.menu-card:nth-child(1) { animation-delay: 0.05s; }
+.menu-card:nth-child(2) { animation-delay: 0.10s; }
+.menu-card:nth-child(3) { animation-delay: 0.15s; }
+.menu-card:nth-child(4) { animation-delay: 0.20s; }
+.menu-card:nth-child(5) { animation-delay: 0.25s; }
+.menu-card:nth-child(6) { animation-delay: 0.30s; }
+.menu-card:nth-child(7) { animation-delay: 0.35s; }
+.menu-card:nth-child(8) { animation-delay: 0.40s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-sidebar { width: 100%; min-height: auto; }
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .hero { padding: 50px 0 40px; }
+}
